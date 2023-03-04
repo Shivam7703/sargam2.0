@@ -61,7 +61,6 @@ z-index: 1;
 }
 .search button{
     background:transparent;
-    outline :4px;
     color: rgba(255, 251, 251, 0.929);
     font-size: 1.2rem;
     border: none;
@@ -92,7 +91,6 @@ z-index: 1;
 .music-flow-y{
     justify-content: center;
     overflow-y:hidden;
-    -webkit-overflow-scrolling:auto;
 }
 .old-singer{
     height: 100px;
@@ -234,7 +232,10 @@ z-index: 10;
     margin: 0.3rem;
     margin-bottom: 0.8rem;
     background: linear-gradient(45deg, #ef6e1f 25%, #930f44eb 65%, #860237 70%);
-border-radius: 18px;
+border-radius: 0px 18px 18px 0px;
+}
+.quelist:hover{
+    border: 4px solid cyan;
 }
 p{
     font-size: 1rem;
@@ -281,8 +282,9 @@ right: 0;
 }
 @media screen and (max-width: 600px){
     #sargam{
-        visibility: hidden;
-        display: none;
+      transform: scale(0.6);
+      margin-left: -35px;
+      margin-right: -25px;
     }.m-type{
         width:260px ;
         height:160px;}
@@ -296,9 +298,7 @@ right: 0;
             display:flex;
         justify-content: space-between;
             position: relative;
-            overflow-x: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling:auto ;
+            overflow-x: scroll;
         }.movie{
             transform: scale(0.9);
             margin-right: 50px;
@@ -306,16 +306,20 @@ right: 0;
         #btn{
             font-size: 2.5rem;
         }
+        .search input{
+            display: none;}
     #shiva{
         display: none;
-    }}
-    @media screen and (max-width: 380px){
-        .search input{
-        visibility: hidden;
-        display: none;
-    }.search button{
+    }
+    .search{
+        border: none;
+    }
+    .search button{
         font-size: 1.9rem;
+        border-radius:  50%;
+        border: 0.3rem solid rgb(103, 6, 76);
        margin:0.3rem;
+
     }
     .pl{
         transform: scale(0.8);
@@ -323,12 +327,8 @@ right: 0;
     .x{
         margin: 0;
         margin-right: 10px;
-    }.search{
-        border: none;
-        border-radius: 50%;
-        border: 0.3rem solid rgb(103, 6, 76);
     }
-    .search:hover{
+    .search button:hover{
         box-shadow: -15px -15px 45px 10px rgb(247, 245, 245);
     }
-    }
+}
